@@ -9,10 +9,6 @@
       var scrollHeight  = this_div.get(0).scrollHeight;
       var outerHeight   = this_div.outerHeight();
 
-      console.log('scrollTop, scrollHeight, outerHeight', scrollTop, scrollHeight, outerHeight);
-
-      console.log('delta', delta);
-
       if (scrollHeight <= outerHeight) {
         // No scroll bar present, scroll window normally
         return;
