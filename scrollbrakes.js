@@ -9,16 +9,20 @@
       var scrollHeight  = this_div.get(0).scrollHeight;
       var outerHeight   = this_div.outerHeight();
 
-      if (scrollHeight === outerHeight) {
+      console.log('scrollTop, scrollHeight, outerHeight', scrollTop, scrollHeight, outerHeight);
+
+      console.log('delta', delta);
+
+      if (scrollHeight <= outerHeight) {
         // No scroll bar present, scroll window normally
         return;
       }
-      else if (scrollTop <= 0) { // Details scroll has reached the top
+      else if (scrollTop <= 0) { // Scrollbar has reached the top
         if (delta > 0) {
           e.preventDefault();
         }
       }
-      else if ((scrollHeight - scrollTop) <= (outerHeight + 1)) { // Details scroll has reached the bottom
+      else if ((scrollHeight - scrollTop) <= (outerHeight + 1)) { // Scrollbar has reached the bottom
         if (delta < 0) {
           e.preventDefault();
         }
